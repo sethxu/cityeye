@@ -1,0 +1,12 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+#  activerecord:
+#    models:
+#      contact: '联系我们'
+#    attributes:
+#      contact:
+#        title: '标题'
+#        sub_title: '副标题'
+#        content: '内容'

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  sequence: 1
+  pic_url: MyString
+  display: false
+  intro: MyText
+  detail: MyText
+  category: 
+
+two:
+  name: MyString
+  sequence: 1
+  pic_url: MyString
+  display: false
+  intro: MyText
+  detail: MyText
+  category: 

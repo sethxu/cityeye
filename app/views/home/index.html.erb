@@ -1,0 +1,69 @@
+<div class="Bar">
+  <h5>LOCATION:</h5>
+  <ul class="BreadcrumbNavigation">
+    <li><%= link_to "HOME", root_path %> &gt;</li>
+    <li>HOME</li>
+  </ul>
+  <div class="clear"></div>
+</div>
+<div id="home">
+  <div id="col_main">
+    <div id="main-wrap">
+      <div class="detail">
+        <div class="detail_top">
+          <div class="ProductInformation">
+            <div class="ProInfoTab_container">
+              <div class="board"><%= link_to "+More", products_path %><strong>PRODUCTS</strong></div>
+              <div class="ProInfo_tab_project" style="display: block;">
+                <ul class="main_listUL">
+                  <% for product in @latest_products-%>
+                  <li>
+                  <div class="pro_img" >
+                    <%= link_to image_tag(product.image.url(),:width => 130,:height =>110), :controller => "products" , :action => "show", :id => product.id %>
+                  </div>
+                  <h2><%= link_to "#{product.name}", :controller => "products" , :action => "show", :id => product.id  %></h2>
+                  </li> 
+                  <% end -%>
+                </ul>
+              </div>
+              <div class="board"><%= link_to "+More", abouts_path %><strong>ABOUT US</strong></div>
+              <div class="ProInfo_tab_content" style="display: block;">
+                <% for about in @abouts -%>
+                <%= about.detail.html_safe %>
+                <% end -%>
+              </div>
+            </div>
+          </div>
+          <div class="left">
+            <dl class="pro_type">
+              <dt>Our Products</dt>
+              <% for category in @categories -%>
+              <dd class="PngBg"><%= link_to "#{category.name}", :controller => "products" , :action => "index", :id => category.id %></dd>
+              <% end -%>             
+            </dl>
+            <dl class="about_contact">
+              <dt>Contact Us</dt>
+              <dd class="PngBg"><span>Taiwan Company：</span>TAIWAN FU TIGER ENTERPRISE CO.,LTD</dd>
+              <dd class="PngBg"><span>China Company：</span>Tianjin Atann Envi Protection Tech Corporation</dd>
+              <dd class="PngBg"><span>Taiwan Factory：</span>No.9,Sec. 4,Dongda Rd.,Xinzhu City,Taiwan.</dd>
+              <dd class="PngBg"><span>China Factory：</span>Fanjia,Yuelong Street,Ninghai Country,Zhejiang Province,China.</dd>
+              <dd class="PngBg"><span>Phone：</span>86-022-24389923</dd>
+              <dd class="PngBg"><span>Fax：</span>86-022-24319046</dd>
+              <dd class="PngBg"><span>Tel：</span>86-13821078799</dd>
+              <dd class="PngBg"><span>E-mail：</span>eddy78799@vip.163.com</dd>
+              <dd class="PngBg"><span>Skype：</span>eddyeddy7259</dd>
+              <dd class="PngBg"><span>QQ：</span>864831422</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  jQuery(this).ready(function($) {
+     $('#LogoNav li').removeClass("li_selected");
+      $('#LogoNav #id_home').addClass("li_selected");
+      });
+</script>
+

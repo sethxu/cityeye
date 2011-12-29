@@ -1,0 +1,26 @@
+<div class="Bar">
+  <h5>LOCATION:</h5>
+  <ul class="BreadcrumbNavigation">
+    <li><%= link_to "HOME", root_path %> &gt;</li>
+    <li><%= link_to "#{@product.category.name}", :controller => "products" , :action => "index", :id => @product.category  %> &gt;</li>
+    <li><%= @product.name %></li>
+  </ul>
+  <div class="clear"></div>
+</div>
+<div id="col_main">
+  <div id="main-wap">
+    <div class="main_list">
+      <h1 class="title"><%= @product.name %></h1>
+      <%= image_tag(@product.image.url, :alt => @product.name) %>
+      <%= @product.detail.html_safe %>
+    </div>
+<%= link_to 'Back', products_path %>
+  </div>
+</div>
+<%= render 'categories' %>
+<script type="text/javascript">
+  jQuery(this).ready(function($) {
+      $('#LogoNav li').removeClass("li_selected");
+      $('#LogoNav #id_products').addClass("li_selected");
+      });
+</script>

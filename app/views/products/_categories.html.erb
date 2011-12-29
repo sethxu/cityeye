@@ -1,0 +1,21 @@
+<div id="col-sub">
+  <dl class="pro_type">
+    <dt>Product Category</dt>
+    <% for category in @categories -%>
+    <dd class="PngBg"><%= link_to "#{category.name}", :controller => "products" , :action => "index", :id => category.id %></dd>
+    <% end -%>
+  </dl>
+  <div class="pro_mini">
+    <dl>
+      <dt>Latest Products</dt>
+      <% for lastest_product in @latest_products -%>
+      <dd>        
+      <div>
+        <%= link_to image_tag(lastest_product.image.url(:thumb)), :controller => "products", :action => "show", :id => lastest_product.id %>
+      </div>
+      <%= link_to "#{lastest_product.name}", :controller => "products" , :action => "show", :id => lastest_product.id  %>
+      </dd>
+      <% end -%>
+    </dl> 
+  </div>
+</div>

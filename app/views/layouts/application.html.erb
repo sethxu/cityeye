@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= raw (@page_title ? @page_title : @setting[:site_name]) %></title>
+    <%= stylesheet_link_tag    "en_application" %>
+    <%= stylesheet_link_tag    "galleriffic-3" %>
+
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "jquery.galleriffic" %>
+    <%= javascript_include_tag "jquery.history" %>
+    <%= javascript_include_tag "jquery.opacityrollover" %>
+    <!--[if lte IE 6]>
+     <%= javascript_include_tag "DD_belatedPNG_0.0.8a-min" %>
+    <script>
+        DD_belatedPNG.fix('.PngBg');
+    </script>
+    <![endif]--> 
+    <%= csrf_meta_tags %>
+  </head>
+  <body class = 'inside'>
+    <div class="wrapper">
+      <div class="header">
+        <div id="LogoNav">
+          <div class="LogoNavWrap">
+            <h1><%= link_to "", root_path , :class => "PngBg" %></h1>
+            <ul>
+              <li id="id_home"><%= link_to "HOME", root_path %></li>
+              <li id="id_about"><%= link_to "ABOUT US", abouts_path %></li>
+              <li id="id_products"><%= link_to "PRODUCTS", products_path %></li>
+              <li id="id_certificate"><%= link_to "CERTIFICATE", certificates_path %></li>
+              <li id="id_projects"><%= link_to "PROJECTS", projects_path %></li>
+              <li id="id_contact" class="li_selected"><%= link_to "CONTACT US", contacts_path %></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="promotion PngBg">        
+          <h2 class="pro_kehu PngBg"><span>customer&quality oriented</span></h2> 
+        </div>
+
+      </div>
+      <div id="body" class='body'>
+        <%= yield %>
+      </div>
+      <div class="footer">
+        <div class="copyright">Copyright &copy; 2009 Tianjin Atann Envi Protection Tech Corporation, All Rights Reserved</div>
+      </div>
+    </div>
+  </body>
+</html>
